@@ -10,7 +10,9 @@
             <p> {{user_profile.nickname}} </p>
           </div>
 
+
           <el-dialog  :visible.sync="dialogNewUser" title="Update user information" append-to-body :close-on-click-modal='false'>
+
             <UpdateUserProfile v-on:closedialog="finalizeNewUser"></UpdateUserProfile>
             <div  slot="footer" class="dialog-footer">
           </div>

@@ -13,6 +13,7 @@
           Search
         </el-button>
         <el-button v-if="!wallet_connected" @click="dialogSelectWallet = true">
+
           Connect wallet
         </el-button>
 
@@ -24,6 +25,7 @@
           Switch data server
         </el-button>
         <el-button @click="logout()"> quit</el-button>
+
         <div>
           <p>{{ user_address }}</p>
         </div>
@@ -31,7 +33,9 @@
 
       <el-dialog
         :visible.sync="dialogUpdateDataServer"
+
         title="Connect to data server"
+
         append-to-body
         :close-on-click-modal="false"
       >
@@ -43,7 +47,9 @@
 
       <el-dialog
         :visible.sync="dialogNewUser"
+
         title="Create a new user information"
+
         append-to-body
         :close-on-click-modal="false"
       >
@@ -55,7 +61,9 @@
 
       <el-dialog
         :visible.sync="dialogSelectWallet"
+
         title="Choose a wallet"
+
         :modal="false"
         :close-on-click-modal="false"
       >
@@ -215,7 +223,9 @@ export default {
             cycle_id: this.input_cycle_id,
           },
         });
+
       else this.$message("User does not exist");
+
     },
     async test() {},
 
@@ -274,7 +284,9 @@ export default {
         console.log("logged in");
       } catch (error) {
         console.error("Conncet wallet error", error);
+
         this.notifiy("Failed to connect to wallet", "Error");
+
         return;
       }
 
@@ -303,7 +315,9 @@ export default {
         } else {
           await user_ds.getDataserverAuth();
           this.$message({
+
             message: "Successfully connected to the server",
+
             type: "success",
           });
           this.dataServerConnect(true);
@@ -323,11 +337,13 @@ export default {
         }
 
         this.$parent.loadings = false;
+
         this.notifiy("Successfully connected to the wallet", "Info");
         this.dialogSelectWallet = false;
       } catch (error) {
         this.$parent.loadings = false;
         this.notifiy("Failed to connect to wallet", "Error");
+
         console.error(error);
       }
     },
@@ -335,10 +351,12 @@ export default {
     loginToCkplanet: function() {
       console.log("logged to ckplanet");
       this.getManageCycles(this.user_lock_args).catch((e) =>
+
         this.$message.error("Failed to get user-managed circles", e)
       );
       this.getJoinCycles(this.user_lock_args).catch((e) =>
         this.$message.error("Failed to get user-joined circles", e)
+
       );
     },
 

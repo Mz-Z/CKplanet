@@ -4,7 +4,9 @@
     id="app"
     v-on:click.shift.right="toggleDebug()"
     v-loading="loadings"
+
     element-loading-text="Please authorize in the wallet"
+
   >
     <Test v-if="debug"> </Test>
     <TopBar></TopBar>

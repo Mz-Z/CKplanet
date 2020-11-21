@@ -1,10 +1,12 @@
 <template>
   <div id="UpdateDataServer">
     <el-form :disabled='btnloading' :model="form">
+
       <el-form-item label="Server ip" :label-width="formLabelWidth">
         <el-input
           v-model="data_server_ip"
           placeholder="Please enter the data server ip"
+
           clearable
         ></el-input>
       </el-form-item>
@@ -18,7 +20,9 @@
           type="primary"
           :loading="btnloading"
           @click="UpdateDataServer()"
+
           >SAVE</el-button
+
         >
       </el-form-item>
     </el-form>
@@ -57,7 +61,9 @@ export default {
 
         await user_ds.updateDataServerInfo();
         this.$message({
+
           message: "Successfully connected with server information",
+
           type: "success",
         });
 

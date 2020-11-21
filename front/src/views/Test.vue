@@ -7,10 +7,12 @@
     <h3>{{ lists }}</h3>
     <router-link :to="url">Go to about</router-link>
     <el-button @click.prevent="test()" size="md" class="mr-auto"
+
       >Test</el-button
     >
     <el-button @click.prevent="postDataa()">Send data</el-button>
     <el-button @click.prevent="purgeState()">Clear state</el-button>
+
     
   </div>
 </template>

@@ -15,7 +15,9 @@
         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
     </el-upload>
       </el-form-item>
+
         <el-form-item label="nickname" :label-width="formLabelWidth">
+
         <el-input v-model="nickname" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
@@ -24,7 +26,9 @@
         </el-collapse-transition>
         </el-form-item>
         <el-form-item>
+
           <el-button type="primary" :loading="btnloading" @click="updateUserProfile()">SAVE</el-button>
+
         </el-form-item>
     </el-form>
 
