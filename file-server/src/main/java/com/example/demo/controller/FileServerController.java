@@ -211,6 +211,7 @@ public class FileServerController {
             String accessToken = jsonObject.getString("access_token");
             String msg = jsonObject.getString("msg");
             String cpk = jsonObject.getString("cpk");
+            String type = jsonObject.getString("type");
             AuthRequestEntity entity = new AuthRequestEntity(accessToken, msg, cpk);
             if (!AuthenticationService.verify(entity.getAccessToken(), entity.msg, entity.getCpk())) {
                 return new AuthResponseEntity(UNAUTHORIZED);
